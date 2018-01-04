@@ -1,0 +1,38 @@
+<div id="loginMain" class ="teacheraddpanel">
+   <h1> Add Teacher </h1>
+  <table>
+    <tr>
+	 <td> Teacher Name	 </td>
+   <td>
+   <input type="text" name="teacher_name" [(ngModel)]="teacher.name" placeholder="Teacher Name ">
+   </td>
+   </tr>
+   <tr>
+   <td> Teacher Phone	 </td>
+   <td>
+   <input type="text" name="teacher_phone" [(ngModel)]="teacher.phone" placeholder="Teacher Phone " >
+   </td>
+   </tr>
+   <tr>
+   <td> Teacher email	 </td>
+   <td>
+   <input type="text" name="teacher_email" [(ngModel)]="teacher.email" placeholder="Teacher Email " >
+   </td>
+   </tr>
+   <tr>
+    <td> Select Room </td> 
+    <td>
+      <select (change)="onSelect($event.target.value)" [(ngModel)]="selectedRoom" placeholder="Select room ">
+         <option  *ngFor="let room of rooms" value= {{room.name}}>
+                 {{room.name}}
+         </option>
+      </select>
+    </td>
+  </table>
+	  <br>
+    <br>
+  <button (click)="addTeacher()">Add Teacher</button>
+		
+  
+</div>
+

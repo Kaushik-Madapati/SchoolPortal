@@ -1,0 +1,36 @@
+<div id="StudentInfoMain" class ="studentinfopanel">
+   <h1> Student Info </h1>
+   <table>
+    <tr>
+   <label> Name: </label>
+   <label> {{student.name}} </label>
+   </tr>
+   <tr>
+   <label> Parent name : </label>
+   <label> {{student.parent_name}} </label>
+   </tr>
+   <tr>
+   <label> Parent Email : </label>
+   <label> {{student.parent_email}} </label>
+   </tr>
+  <tr>
+   <label> Parent Phone : </label>
+   <label> {{student.parent_phone}} </label>
+   </tr>
+   <tr>
+   <label> Room : </label>
+   <label> {{student.room}} </label>
+   </tr>
+   <br>
+   </table>
+
+   <br>
+   <br>
+   <br>
+
+    <button (click)="Delete()"> Delete </button> 
+    <button (click)="Contact()"> Contact Parent </button> 
+    <button (click)="MoveDifferentRoom()"> Move to different room </button> 
+  
+</div>
+

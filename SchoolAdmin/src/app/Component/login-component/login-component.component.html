@@ -1,0 +1,10 @@
+<div id="loginMain" class ="loginpanel">
+   <h1> Login </h1>
+  <input  type="text" [(ngModel)]="name" placeholder="User Name ">
+  <br>
+   <input type="text" [(ngModel)]="password" placeholder="Password ">
+  <br>
+  <br>
+  <button (click)="LoginAdmin(name, password)">Admin</button>
+  <button (click)="LoginTeacher(name, password)">Teacher</button>
+</div>

@@ -1,0 +1,44 @@
+<div id="studentAddMain" class ="studentaddpanel">
+   <h1> Add Student </h1>
+  <table>
+    <tr>
+	 <td> Student Name	 </td>
+   <td>
+   <input type="text" name="student_name" [(ngModel)]="student.name" placeholder="Student Name ">
+   </td>
+   </tr>
+    <tr>
+	 <td> Parent Name	 </td>
+   <td>
+   <input type="text" name="parent_name" [(ngModel)]="student.parent_name" placeholder="Parent Name ">
+   </td>
+   </tr>
+   <tr>
+   <td> Parent Phone	 </td>
+   <td>
+   <input type="text" name="parent_phone" [(ngModel)]="student.parent_phone" placeholder="Parent Phone " >
+   </td>
+   </tr>
+   <tr>
+   <td> Parent Email	 </td>
+   <td>
+   <input type="text" name="parent_email" [(ngModel)]="student.parent_email" placeholder="Parent Email " >
+   </td>
+   </tr>
+   <tr>
+    <td> Select Room </td> 
+    <td>
+      <select (change)="onSelect($event.target.value)" [(ngModel)]="selectedRoom" placeholder="Select room ">
+         <option  *ngFor="let room of rooms" value= {{room.name}}>
+                 {{room.name}}
+         </option>
+      </select>
+    </td>
+    </tr>
+  </table>
+	  <br>
+    <br>
+ <button (click)="addStudent()">Add Room</button>			
+  
+</div>
+

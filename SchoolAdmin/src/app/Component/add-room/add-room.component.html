@@ -1,0 +1,31 @@
+<div id="AdddRoomMain" class ="roomaddpanel">
+   <h1> Add Room </h1>
+  <table>
+    <tr>
+	 <td> Room Name	 </td>
+   <td>
+   <input type="text" name="room_name" [(ngModel)]="room.name" placeholder="Room Name ">
+   </td>
+   </tr>
+   <tr>
+   <td> Room  Phone	 </td>
+   <td>
+   <input type="text" name="room_phone" [(ngModel)]="room.phone" placeholder="Room Phone " >
+   </td>
+   </tr>
+   <tr>
+    <td> Select Teacher </td> 
+    <td>
+      <select (change)="onSelect($event.target.value)" [(ngModel)]="selectedTeacher" placeholder="Select teacher ">
+         <option  *ngFor="let teacher of teachers" value= {{teacher.name}}>
+                 {{teacher.name}}
+         </option>
+      </select>
+    </td>
+  </table>
+	  <br>
+    <br>
+  <button (click)="addRoom()">Add Room</button>		
+  
+</div>
+

@@ -1,0 +1,45 @@
+<div id="RoomMain" class ="contactpanel">
+    <h2> Contact Class </h2>
+    <table class ="table">
+        <tr>
+           <th> # </th>
+           <th> Name </th>
+           <th> Action </th>
+      </tr>
+
+
+      <tr *ngFor = "let room of rooms; let i = index " >
+        <td> {{i+1}} </td>
+        <td> {{room.name}} </td>
+        <td> <button (click)="sendRoomMessage(room._id)">Send Message </button> </td>
+      </tr>
+    </table>
+    <br>
+            <button (click)="ContactAllStudents()"> Contact All Students </button> 
+    <br>
+      
+      
+     <h2> Contact Teacher </h2>
+    <table class ="table">
+      <tr>
+           <th> # </th>
+           <th> Name </th>
+           <th> Action </th>
+      </tr>
+
+
+      <tr *ngFor = "let teacher  of teachers; let i = index " >
+        <td> {{i+1}} </td>
+        <td> {{teacher.name}}  </td>
+        <td> <button (click)="sendTeacherMessage(room._id)">Send Message </button> </td>
+      </tr>
+    </table>
+
+    <br>
+
+    <button (click)="ContactAllTeachers()"> Contact All Teachers </button> 
+  
+</div>
+
+
+

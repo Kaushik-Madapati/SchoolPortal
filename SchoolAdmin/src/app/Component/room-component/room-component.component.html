@@ -1,0 +1,27 @@
+<div id="RoomMain" class ="roompanel">
+   <h1> Room Overview  </h1>
+    <table class ="table">
+      <tr>
+           <th> # </th>
+           <th> Name </th>
+           <th> Teacher </th>
+           <th> No. Of Students </th>
+        </tr>
+
+
+      <tr *ngFor = "let room of rooms; let i = index " >
+        <td> {{i+1}} </td>
+
+        <td> <button (click)="roomInfo(room._id)">{{room.name}} </button> 
+         <td> <button (click)="teacherInfo(room.teacherID)">{{room.teacher_name}} </button> 
+        <td> {{room.no_of_students}} </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <button (click)="addRoom()">Add Room </button> 
+  
+</div>
+
+
+

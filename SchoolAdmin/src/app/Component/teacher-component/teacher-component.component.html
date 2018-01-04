@@ -1,0 +1,28 @@
+<div *ngIf = "isDataAvailable == true" >
+<div id="TeacherMain" class ="teacherpanel">
+   <h1> Teacher Overview  </h1>
+    <table class ="table">
+      <tr>
+           <th> # </th>
+           <th> Name </th>
+           <th> Room </th>
+           <th> Phone </th>
+                </tr>
+
+
+      <tr *ngFor = "let teacher of teachers; let i = index " >
+        <td> {{i+1}} </td>
+        <td> <button (click)="teacherInfo(teacher._id)">{{teacher.name}} </button> 
+        <td> <button (click)="roomInfo(teacher.roomID)">{{teacher.roomName}} </button> 
+        <td> {{teacher.phone}} </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <button (click)="addTeacher()">Add Teacher </button> 
+  
+</div>
+</div>
+
+
+

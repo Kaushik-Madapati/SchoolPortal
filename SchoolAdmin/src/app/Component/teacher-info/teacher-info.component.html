@@ -1,0 +1,67 @@
+<div *ngIf = "isDataAvailable == true">
+<div id="loginMain" class ="teacherinfopanel">
+   <h1> Teacher Info </h1>
+   <table>
+    <tr>
+   <label> Name: </label>
+   <label> {{teacher.name}} </label>
+   </tr>
+   <tr>
+   <label> Phone : </label>
+   <label> {{teacher.phone}} </label>
+   </tr>
+    <tr>
+   <label> Email : </label>
+   <label> {{teacher.email}} </label>
+   </tr>
+   <tr>
+   <label> Room : </label>
+   <label> {{teacher.roomID}} </label>
+   </tr>
+  <tr>
+   <label> No. of PTO : </label>
+   <label> {{teacher.no_of_pto}} </label>
+   </tr>
+   <tr>
+   <label> No. of Sick leave : </label>
+   <label> {{teacher.no_of_sick_leave}} </label>
+   </tr>
+   <tr>
+   <label> No. of Call Off : </label>
+   <label> {{teacher.no_of_call_off}} </label>
+   </tr>
+   <br>
+   </table>
+
+   <br>
+   <h2> Update Vaccation </h2>
+   <br>
+
+  <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+  <table>
+	 <tr>
+	    <td> Time Off Type :</td>
+	    <td> 
+        <input type="radio" value="Call Off" name="no_of_call_off" [ngModel]="teacherForm.no_of_call_off" > Call Off
+        <br>
+        <input type="radio" value="Sick Leave" name="no_of_sick_leave" [ngModel]="teacherForm.no_of_sick_leave" > Sick Leave
+        <br>
+        <input type="radio" value="PTO" name="no_of_pto" [ngModel]="teacherForm.no_of_pto" >  PTO
+        <br>
+       </td> 
+	 </tr>
+   <td> No of Vaccation	 </td>
+   <td>
+   <input type="text" name="no_of_vaccation" [ngModel]="NoOfVaccation" >
+   </td>
+  </table>
+	  <br>
+    <br>
+	  <button>Submit</button>
+      <button (click)="DeleteTeacher()"> Delete </button> 
+
+		
+	     
+</form> 
+</div>
+</div>

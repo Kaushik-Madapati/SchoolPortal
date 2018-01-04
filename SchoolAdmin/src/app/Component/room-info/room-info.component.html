@@ -1,0 +1,30 @@
+<div id="StudentMain" class ="roominfopanel">
+   <h1> Rooom's Student  Overview  </h1>
+
+   <div *ngIf = "isDataAvailable == true" >
+     <label> Class Teacher Name : {{room.teacher_name}} </label>
+   </div>
+   <br>
+   <br>
+    <table class ="table">
+      <tr>
+           <th> # </th>
+           <th> Name </th>
+      </tr>
+
+      <tr *ngFor = "let student of students; let i = index " >
+        <td> {{i+1}} </td>
+        <td> <a href="student-info" onclick="studentInfo(student._id);">  {{student.name}} </a> </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <button (click)="updateRoom()">Update Room </button> 
+    <button (click)="deleteRoom()">Delete Room </button> 
+
+
+
+</div>
+
+
+

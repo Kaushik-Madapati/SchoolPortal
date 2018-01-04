@@ -1,0 +1,41 @@
+<div id="studentAddMain" class ="studentupdatepanel">
+   <h1> Update  Student </h1>
+  <table>
+    <tr>
+	 <td> Student Name	 </td>
+   <td> {{orgStudent.name}} </td>
+   </tr>
+   <tr>
+	 <td> Parent Name	 </td>
+   <td> {{orgStudent.parent_name}} </td>
+   </tr>
+   <tr>
+   <td> Parent Phone	 </td>
+   <td>
+   <input type="text" name="parent_phone" [ngModel]="student.parent_phone" placeholder="{{orgStudent.parent_phone}}" >
+   </td>
+   </tr>
+   <tr>
+   <td> Parent Email	 </td>
+   <td>
+   <input type="text" name="parent_email" [ngModel]="student.parent_email" placeholder="{{orgStudent.parent_email}} " >
+   </td>
+   </tr>
+   <tr>
+    <td> Select Room </td> 
+    <td>
+      <select (change)="onSelect($event.target.value)" [(ngModel)]="selectedRoom" placeholder="Select room ">
+         <option  *ngFor="let room of rooms" value= {{room.name}}>
+                 {{room.name}}
+         </option>
+      </select>
+    </td>
+    </tr>
+  </table>
+	  <br>
+    <br>
+	  <button>Submit</button>
+		
+  
+</div>
+
