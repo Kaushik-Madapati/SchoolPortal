@@ -1,0 +1,42 @@
+<div *ngIf = "isDataAvailable == true" >
+    <div id="StudentBackgroundMain" class ="studentbackgroundpanel">
+       <h1> Background Overview  </h1>
+        <table class ="table">
+            <tr>
+               <th> Id </th>
+               <th> Age </th>
+               <th> isFirstChild </th>
+               <th> ethnicity </th>
+               <th> No. Of Sibling </th>
+               
+          </tr>
+    
+    
+          <tr *ngFor = "let student_background of student_backgrounds; let i = index " >
+            <td> <input type= "text" class ="form-control" id="id"
+              required [(ngModel)] = "student_background._id" name= "id"> </td>
+            <td> <input type= "text" class ="form-control" id="age"
+              required [(ngModel)] = "student_background.age" name= "age"> </td> 
+            <td> <select class = "form-control" id="isFirstChild"
+              required [(ngModel)] = "student_background.isFirstChild" name = "isFirstChild">
+              <option *ngFor= "let first of isFirstChild" [value]="first">{{first}}</option>
+             </select></td>
+            <td> <select class = "form-control" id="ethnicity"
+                 required [(ngModel)] = "student_background.ethnicity" name = "ethnicity">
+                 <option *ngFor= "let ethnicity of ethnicites" [value]="ethnicity">{{ethnicity}}</option>
+                </select></td>
+            <td> <input type= "text" class ="form-control" id="sibling"
+                  required [(ngModel)] = "student_background.sibling" name= "sibling"> </td> 
+          </tr>
+        </table>
+        <br>
+        <br>
+        <button (click)="downloadCSV()">Upload Background </button> 
+      
+    </div>
+    </div>
+
+    
+      
+       
+      

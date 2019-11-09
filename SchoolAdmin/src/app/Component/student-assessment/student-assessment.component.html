@@ -1,0 +1,34 @@
+<div *ngIf = "isDataAvailable == true" >
+        <div id="StudentAssessmentMain" class ="studentbackgroundpanel">
+           <h1> Assessment Overview  </h1>
+            <table class ="table">
+                <tr>
+                   <th> Id </th>
+                   <th> Math Assessment </th>
+                   <th> English Assessment </th>
+                   <th> Pratical Assessment </th>
+                   <th> Sensorial Assessment</th>
+                   
+              </tr>
+        
+        
+              <tr *ngFor = "let student_assessment of student_assessments; let i = index " >
+                 <td> <input type= "text" class ="form-control" id="id"
+                    required [(ngModel)] = "student_assessment._id" name= "id"> </td>
+                 <td> <input type= "text" class ="form-control" id="EnglishAssessment"
+                      required [(ngModel)] = "student_assessment.EnglishAssessment" name= "EnglishAssessment"> </td>
+                 <td> <input type= "text" class ="form-control" id="MathAssessment"
+                        required [(ngModel)] = "student_assessment.MathAssessment" name= "MathAssessment"> </td>
+                 <td> <input type= "text" class ="form-control" id="PraticalAssessment"
+                          required [(ngModel)] = "student_assessment.PraticalAssessment" name= "PraticalAssessment"> </td>
+                 <td> <input type= "text" class ="form-control" id="SensorialAssessment"
+                            required [(ngModel)] = "student_assessment.SensorialAssessment" name= "SensorialAssessment"> </td>
+              
+              </tr>
+            </table>
+            <br>
+            <br>
+            <button (click)="downloadCSV()">Upload Assessment </button> 
+          
+        </div>
+        </div>

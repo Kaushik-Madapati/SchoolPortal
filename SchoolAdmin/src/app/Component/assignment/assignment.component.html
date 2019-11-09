@@ -1,0 +1,42 @@
+<div  id="AssignmentMain" class ="assignmentpanel" >
+    <button (click)="GenerateReport()">Generate Today's Assignment </button> 
+</div>
+<div *ngIf = "isDataAvailable == true" >
+    <div id="AssignmentView" class ="assignmentview" >
+       <h1> Assignment Overview  </h1>
+        <table class ="table">
+          <tr>
+               <th> ID </th>
+               <th> English Level </th>
+               <th> Math Level </th>
+               <th> Practical Level </th>
+               <th> Sensorial Level </th>
+               <th> When </th>
+               <th> Where </th>
+               <th> No. of Activites  </th>
+               
+          </tr>
+    
+    
+          <tr *ngFor = "let assignment of records; let i = index " >
+                 <td>"Test1" </td>
+                <td> {{assignment.english_level}} </td> 
+                <td> {{assignment.math_level}} </td> 
+                <td> {{assignment.pratical_level}} </td>
+                <td> {{assignment.sensorial_level}} </td>
+                <td> {{assignment.when}} </td>
+                <td> {{assignment.where}} </td>
+                <td> {{assignment.no_activity}} </td>
+                    
+          </tr>
+        </table>
+        <br>
+        <br>
+        <button (click)="downloadCSV()">Download </button> 
+      
+    </div>
+    </div>
+    
+    
+    
+    

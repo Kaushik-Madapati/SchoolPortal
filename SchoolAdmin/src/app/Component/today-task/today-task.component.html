@@ -1,0 +1,40 @@
+<div  id="TodayTasktMain" class ="todaytaskpanel" > 
+    <button (click)="GenerateReport()">Generate Today's Assignment </button> 
+</div>
+
+<div *ngIf = "isDataAvailable == true" >
+    <div id="TodayTaskView" class ="todaytaskview" >
+
+    <table class="todaytaskview" *ngIf="records.length > 0">    
+    <thead>    
+        <tr>    
+        <th>ID </th>    
+        <th>English Level </th>   
+        <th>Math Level </th>     
+        <th>Practical Level </th>    
+        <th>Sensorial Level </th>  
+        <th>When </th> 
+        <th>No. Of Activities</th> 
+        <th>Where</th>    
+        
+        </tr>    
+    </thead>    
+    <tbody>  
+            
+        
+        <tr *ngFor="let record of records;let i = index;">    
+        <td> <span>{{record._id}}</span> </td>    
+        <td> <span>{{record.english_level}}</span> </td>    
+        <td> <span>{{record.math_level}}</span> </td> 
+        <td> <span>{{record.pratical_level}}</span> </td>    
+        <td> <span>{{record.sensorial_level}}</span> </td>    
+        <td> <span>{{record.when}}</span> </td>    
+        <td> <span>{{record.no_activity}}</span> </td>   
+        <td> <span>{{record.where}}</span> </td>     
+        </tr>    
+    </tbody>    
+    </table>  
+
+    <button (click)="downloadCSV()">Download </button> 
+    </div>
+</div>
