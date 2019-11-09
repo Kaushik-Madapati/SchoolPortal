@@ -1,0 +1,92 @@
+<div *ngIf = "isDataAvailable == true" >
+    <div id="ReportMain" class ="reportpanel">
+       <h1> Report Overview  </h1>
+        <table class ="table">
+          <tr>
+               <th> ID </th>
+               <th> English Level </th>
+               <th> Math Level </th>
+               <th> Practical Level </th>
+               <th> Sensorial Level </th>
+               <th> When </th>
+               <th> Where </th>
+               <th> No. of Activites  </th>
+               <th> English Completed ?  </th>
+               <th> Math Completed ? </th>
+               <th> Pratical Completed ?  </th>
+               <th> Sensorial Completed ? </th>
+
+
+          </tr>
+    
+    
+          <tr *ngFor = "let report of reports; let i = index " >
+            <td> <input type= "text" class ="form-control" id="id"
+              required [(ngModel)] = "report._id" name= "id"> </td>
+            <td> <input type= "text" class ="form-control" id="c_english_level"
+                required [(ngModel)] = "report.c_english_level" name= "c_english_level"> </td>
+            <td> <input type= "text" class ="form-control" id="c_math_level"
+                  required [(ngModel)] = "report.c_math_level" name= "c_math_level"> </td>
+            <td> <input type= "text" class ="form-control" id="c_pratical_level"
+                    required [(ngModel)] = "report.c_pratical_level" name= "c_pratical_level"> </td>
+            <td> <input type= "text" class ="form-control" id="c_sensorial_level"
+                      required [(ngModel)] = "report.c_sensorial_level" name= "c_sensorial_level"> </td>
+            <td> <select class = "form-control" id="c_when"
+                        required [(ngModel)] = "report.c_when" name = "c_when">
+                        <option *ngFor= "let w  of when" [value]="w">{{w}}</option>
+                       </select></td>
+
+            <td> <select class = "form-control" id="c_where"
+                        required [(ngModel)] = "report.c_where" name = "c_where">
+                        <option *ngFor= "let w  of where" [value]="w">{{w}}</option>
+                       </select></td>
+
+            <td> <input type= "text" class ="form-control" id="c_no_activity"
+                        required [(ngModel)] = "report.c_no_activity" name= "c_no_activity"> </td>  
+
+            <td> <select class = "form-control" id="c_english_complete"
+              required [(ngModel)] = "report.c_english_complete" name = "c_english_complete">
+              <option *ngFor= "let complete of is_completed" [value]="complete">{{complete}}</option>
+             </select></td>
+
+             <td> <select class = "form-control" id="c_math_complete"
+              required [(ngModel)] = "report.c_math_complete" name = "c_math_complete">
+              <option *ngFor= "let complete of is_completed" [value]="complete">{{complete}}</option>
+             </select></td>
+
+             <td> <select class = "form-control" id="c_pratical_complete"
+              required [(ngModel)] = "report.c_pratical_complete" name = "c_pratical_complete">
+              <option *ngFor= "let complete of is_completed" [value]="complete">{{complete}}</option>
+             </select></td>
+
+             <td> <select class = "form-control" id="c_sensorial_complete"
+              required [(ngModel)] = "report.c_sensorial_complete" name = "c_sensorial_complete">
+              <option *ngFor= "let complete of is_completed" [value]="complete">{{complete}}</option>
+             </select></td>
+                        
+          </tr>
+        </table>
+        <br>
+        <br>
+       
+        <button (click)="downloadCSV()">Report </button> 
+    </div>
+    </div>
+
+
+    <tr *ngFor = "let student_background of student_backgrounds; let i = index " >
+      <td> <input type= "text" class ="form-control" id="id"
+        required [(ngModel)] = "student_background._id" name= "id"> </td>
+      <td> <input type= "text" class ="form-control" id="age"
+        required [(ngModel)] = "student_background.age" name= "age"> </td> 
+      <td> <select class = "form-control" id="isFirstChild"
+        required [(ngModel)] = "student_background.isFirstChild" name = "isFirstChild">
+        <option *ngFor= "let first of isFirstChild" [value]="first">{{first}}</option>
+       </select></td>
+      <td> <select class = "form-control" id="ethnicity"
+           required [(ngModel)] = "student_background.ethnicity" name = "ethnicity">
+           <option *ngFor= "let ethnicity of ethnicites" [value]="ethnicity">{{ethnicity}}</option>
+          </select></td>
+      <td> <input type= "text" class ="form-control" id="sibling"
+            required [(ngModel)] = "student_background.sibling" name= "sibling"> </td> 
+    </tr>
